@@ -59,3 +59,4 @@ gem 'bullet', group: :development
 gem 'bootstrap-sass'
 gem 'react-rails'
 gem 'bcrypt'
+gem 'mandrill_dm'

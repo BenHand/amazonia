@@ -64,6 +64,7 @@ GEM
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
+    excon (0.45.3)
     execjs (2.5.2)
     faker (1.4.3)
       i18n (~> 0.5)
@@ -84,6 +85,11 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
+    mandrill_dm (1.2.0)
+      mandrill-api (~> 1.0.53)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
@@ -187,6 +193,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mandrill_dm
   pg
   pry
   puma
