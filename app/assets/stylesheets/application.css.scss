@@ -1,3 +1,26 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 //You need to now manually import every other scss file.
+
+.center{
+  text-align: center;
+  margin: 0 auto;
+};
+.item-box{
+  //margin: 10px 20px;
+  padding: 10px;
+  border: 2px solid #544AFF;
+};
+
+.text-pad{
+  margin: 10px;
+  word-wrap: break-word;
+};
+
+.product-box{
+  margin-left: 20px;
+};
+
+.item-show-box{
+  margin: 0 auto;
+}

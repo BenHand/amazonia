@@ -290,6 +290,8 @@
   </component>
 </project>
 
-.idea
+/.idea
 # Ignore application configuration
 /config/application.yml
+/tmp
+/log

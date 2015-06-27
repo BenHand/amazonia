@@ -34,6 +34,7 @@ end
 gem 'bullet', group: :development
 gem 'bootstrap-sass'
 gem 'react-rails'
-gem 'bcrypt'
 gem 'mandrill_dm'
 gem 'devise'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'

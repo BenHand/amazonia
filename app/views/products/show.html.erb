@@ -1,2 +1,16 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h2 class="col-md-offset-3 col-md-3"><%= @products.title %></h2>
+<div class="container well col-md-7 product-box">
+  <div class="col-md-12">
+    <div class="item-box col-md-offset-1 col-md-10">
+      <p class="center"><%= image_tag(@products.pic, size: "80x80") %></p>
+      <p class="center"><%= @products.title %></p>
+      <p class="text-pad"><%= @products.description %></p>
+      <p class="center">$<%= @products.price %> ||
+        <strong><%= @products.inventory %> Remaining</strong>
+      </p>
+      <div class="center">
+        <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container well col-md-8 product-box">
+  <div class="col-md-12">
+    <% @products.each do |item| %>
+        <div class="col-md-4 item-box">
+          <p class="center"><%= image_tag(item.pic, size: "80x80") %></p>
+          <p class="center"><%= link_to item.title, product_path(item.id) %></p>
+          <p class="center">$<%= item.price %> || <strong><%= item.inventory %> Remaining</strong></p>
+          <div class="center">
+            <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="center">
+    <% if paginate %>
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    <% end %>
+  </div>
+</div>
