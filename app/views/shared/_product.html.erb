@@ -1,4 +1,4 @@
-<div class="container well col-md-8 product-box">
+<div class="well col-md-7 product-box col">
   <div class="col-md-12">
     <% @products.each do |item| %>
         <div class="col-md-4 item-box">
@@ -6,7 +6,8 @@
           <p class="center"><%= link_to item.title, product_path(item.id) %></p>
           <p class="center">$<%= item.price %> || <strong><%= item.inventory %> Remaining</strong></p>
           <div class="center">
-            <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe %>
+            <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe,
+                        cart_path(current_user.id, item.id), method: 'post' %>
           </div>
         </div>
     <% end %>
