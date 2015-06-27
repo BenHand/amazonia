@@ -1,0 +1,27 @@
+<section class="panel panel-default">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th class="glyphicon glyphicon-usd"></th>
+      <th colspan="3">Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% orders.each do |item| %>
+        <tr>
+          <td><%= item.title %></td>
+          <td><%= item.price %></td>
+          <td>
+              <%= link_to "<i class='glyphicon glyphicon-plus-sign'></i>".html_safe,
+                        cart_path(current_user.id, item.id), method: 'post' %>
+              <%= item.order_products.first.quantity %>
+              <%= link_to "<i class='glyphicon glyphicon-minus-sign'></i>".html_safe,
+                        cart_path(current_user.id, item.id), method: 'post' %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+</section>

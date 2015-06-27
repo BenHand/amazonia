@@ -8,8 +8,8 @@
 </head>
 <body>
 <header>
+  <%= react_component("Navigation") %>
     <nav class="nav">
-      <a href="/" class="btn btn-default">Home</a>
       <p class="navbar-text pull-right">
         <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
