@@ -5,7 +5,7 @@
     <%= render partial: 'shared/product', locals: { products: @products, paginate: true } %>
     <div class="col-md-4 well col">
       <div class="row">
-        <% if current_user && @orders_found %>
+        <% if current_user && @current_order.count > 0 %>
             <%= render partial: 'orders/cart', locals: { orders: @current_order, total: @total_price } %>
         <% else %>
             <div class="center">

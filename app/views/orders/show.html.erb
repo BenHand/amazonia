@@ -1,2 +1,36 @@
 <h2 class="center">Here is your order, <%= current_user.email %></h2>
-
+<section class="panel panel-default container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th class="glyphicon glyphicon-usd"></th>
+      <th colspan="1">Quantity</th>
+      <th>Total</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if @current_order.count > 0 %>
+        <% @current_order.each do |item| %>
+            <tr>
+              <td><%= item.product.title %></td>
+              <td><%= item.product.price %></td>
+              <td>
+                <%= link_to "<i class='glyphicon glyphicon-plus-sign'></i>".html_safe,
+                            cart_path(current_user.id, item.product.id), method: 'post' %>
+                <%= item.quantity %>
+                <%= link_to "<i class='glyphicon glyphicon-minus-sign'></i>".html_safe,
+                            remove_path(item.id, item.product.id), method: 'put' %>
+              </td>
+              <td>$ <%= item.quantity * item.product.price %></td>
+              <td><%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe,
+                            delete_path(item.id), method: 'delete' %></td>
+            </tr>
+        <% end %>
+    <% else %>
+        <div>Nothing in your cart. Lets fix that!! <%= link_to 'Home', root_path %></div>
+    <% end %>
+    </tbody>
+  </table>
+</section>

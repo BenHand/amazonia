@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
       @orders_found = true
     else
       @orders_found = false
-     end
+    end
   end
 
   def new

@@ -9,7 +9,8 @@
         <strong><%= @products.inventory %> Remaining</strong>
       </p>
       <div class="center">
-        <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe %>
+        <%= link_to "<div class='glyphicon glyphicon-shopping-cart btn btn-success' aria-hidden='true'></div>".html_safe,
+                        cart_path(current_user.id, @products.id), method: 'post' %>
       </div>
     </div>
   </div>
