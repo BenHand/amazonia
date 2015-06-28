@@ -24,7 +24,7 @@
                             remove_path(item.id, item.product.id), method: 'put' %>
               </td>
               <td>$ <%= item.quantity * item.product.price %></td>
-              <td><%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe,
+              <td><%= link_to "<i class='glyphicon glyphicon-trash red'></i>".html_safe,
                             delete_path(item.id), method: 'delete' %></td>
             </tr>
         <% end %>
@@ -33,4 +33,8 @@
     <% end %>
     </tbody>
   </table>
+  <br>
+  <%= link_to "<span class='btn btn-success pull-left shop'>Shop More</span>".html_safe %>
+  <%= link_to "<span class='btn btn-primary pull-right checkout'>Checkout</span>".html_safe %>
+
 </section>

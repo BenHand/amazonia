@@ -1,15 +1,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-//You need to now manually import every other scss file.
 
 .center{
   text-align: center;
   margin: 0 auto;
 };
 .item-box{
-  //margin: 10px 20px;
-  padding: 10px;
-  border: 2px solid #544AFF;
+  padding: 5px;
+  border: 2px solid #2E7BB3;
 };
 
 .text-pad{
@@ -39,7 +37,33 @@
 };
 .table .btn {
   border-radius: 0 0 4px 4px;
-}
+};
 .actions{
   margin-top: 10px;
-}
+};
+header{
+  background: darken(#2E7BB3, 20%);
+  font-family: tcqg-n4;
+  font-size: 30px;
+  font-weight: bold;
+  color: lighten(#2E7BB3, 20%);
+};
+body{
+  background: lighten(#2E7BB3, 30%);
+};
+.no-padding{
+  padding: 0;
+  border: 2px solid #2E7BB3;
+};
+h2{
+  padding: 10px 0;
+};
+.shop{
+  margin: 0 10px 20px 50px;
+};
+.checkout{
+  margin: 0 50px 20px 10px;
+};
+.red{
+  color: red;
+};

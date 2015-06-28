@@ -7,8 +7,8 @@ var Navigation = React.createClass({
             <div role="navigation">
               <ul className='nav nav-tabs'>
                 <NavLink name='Home' url='/' />
-                <NavLink name='Products' url='/companies' />
-                <NavLink name='Cart' url='/locations' />
+                <NavLink name='Products' url='/products' />
+                <NavLink name='Cart' url='/orders' />
               </ul>
             </div>
         );

@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    # OrderProduct.where(order_id: params[:order_id], product_id: params[:product_id]).destroy
-    render json: OrderProduct.destroy(params[:order_id])
+    OrderProduct.destroy(params[:order_id])
+    redirect_to :back
   end
 end
