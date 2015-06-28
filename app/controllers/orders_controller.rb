@@ -36,6 +36,15 @@ class OrdersController < ApplicationController
     redirect_to root_url, message
   end
 
+  def checkout
+    test = []
+    cart_items = OrderProduct.where(order_id: params[:order_id])
+    cart_items.each do |item|
+      test << item.order.complete
+    end
+    render json: test
+  end
+
   def destroy
     OrderProduct.destroy(params[:order_id])
     redirect_to :back

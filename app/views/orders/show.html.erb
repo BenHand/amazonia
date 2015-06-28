@@ -34,7 +34,8 @@
     </tbody>
   </table>
   <br>
-  <%= link_to "<span class='btn btn-success pull-left shop'>Shop More</span>".html_safe %>
-  <%= link_to "<span class='btn btn-primary pull-right checkout'>Checkout</span>".html_safe %>
+  <%= link_to "<span class='btn btn-success pull-left shop'>Shop More</span>".html_safe, root_path %>
+  <%= link_to "<span class='btn btn-primary pull-right checkout'>Checkout</span>".html_safe,
+        checkout_path(@current_order.first.order_id), method: 'put' %>
 
 </section>
