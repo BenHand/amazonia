@@ -24,5 +24,6 @@
     </tbody>
   </table>
   <br>
-  <span class="btn btn-primary btn-block">Product Total: $<%= @total_price %>  ||  <%= orders.sum(:quantity) %> Items Total</span>
+  <%= link_to "<span class='btn btn-primary btn-block'>Product Total: #{@total_price}  ||
+    #{orders.sum(:quantity)} Items Total</span>".html_safe, order_path(orders.first.id) %>
 </section>

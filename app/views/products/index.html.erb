@@ -5,17 +5,17 @@
     <%= render partial: 'shared/product', locals: { products: @products, paginate: true } %>
     <div class="col-md-4 well col">
       <div class="row">
-        <% if current_user %>
-            <%= render partial: 'orders/order', locals: { orders: @current_order, total: @total_price } %>
+        <% if current_user && @orders_found %>
+            <%= render partial: 'orders/cart', locals: { orders: @current_order, total: @total_price } %>
         <% else %>
-            <%= button_to 'Login', new_user_session_path, class: 'btn btn-default' %>
+            <div class="center">
+              <p>Items in your shopping cart will display here</p>
+            </div>
         <% end %>
       </div>
       <div class="row well">
-
+        <p>something something dark side</p>
       </div>
     </div>
   </div>
-
-
 </section>
