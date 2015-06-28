@@ -14,7 +14,20 @@ class OrdersController < ApplicationController
     order_product = OrderProduct.find_or_create_by(order_id: order.id, product_id: params[:product_id])
     order_product.quantity += 1
     order_product.save!
-    redirect_to :back
+    redirect_to root_path
+  end
+
+  def update
+    order_item = OrderProduct.find(params[:order_id])
+    if order_item.quantity <= 1
+      order_item.destroy
+      message = { alert: 'Item Removed From Cart!' }
+    else
+      order_item.quantity -= 1
+      order_item.save
+      message = { alert: "1 #{order_item.product.title} Removed."}
+    end
+    redirect_to root_path, message
   end
 
   def destroy

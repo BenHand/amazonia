@@ -8,20 +8,21 @@
     </tr>
     </thead>
     <tbody>
-    <% orders.each do |item| %>
+    <% orders.each do |order| %>
         <tr>
-          <td><%= item.title %></td>
-          <td><%= item.price %></td>
+          <td><%= order.product.title %></td>
+          <td><%= order.product.price %></td>
           <td>
               <%= link_to "<i class='glyphicon glyphicon-plus-sign'></i>".html_safe,
-                        cart_path(current_user.id, item.id), method: 'post' %>
-              <%= item.order_products.first.quantity %>
+                        cart_path(current_user.id, order.product.id), method: 'post' %>
+              <%= order.quantity %>
               <%= link_to "<i class='glyphicon glyphicon-minus-sign'></i>".html_safe,
-                        cart_path(current_user.id, item.id), method: 'post' %>
+                        remove_path(order.id, order.product.id), method: 'put' %>
           </td>
         </tr>
     <% end %>
     </tbody>
   </table>
   <br>
+  <span class="btn btn-primary btn-block">Product Total: $<%= @total_price %>  ||  <%= orders.sum(:quantity) %> Items Total</span>
 </section>
