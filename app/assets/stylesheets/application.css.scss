@@ -47,6 +47,11 @@ header{
   font-size: 30px;
   font-weight: bold;
   color: lighten(#2E7BB3, 20%);
+  height: 90px;
+  div{
+    margin-top: 15px;
+    font-size: 15px;
+  }
 };
 body{
   background: lighten(#2E7BB3, 30%);

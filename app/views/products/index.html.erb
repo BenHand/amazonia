@@ -5,8 +5,10 @@
     <%= render partial: 'shared/product', locals: { products: @products, paginate: true } %>
     <div class="col-md-4 well col">
       <div class="row">
-        <% if current_user && (@current_order != nil) %>
-            <%= render partial: 'orders/cart', locals: { orders: @current_order, total: @total_price } %>
+        <% if current_user && @current_order != nil %>
+            <% if @current_order.first %>
+                <%= render partial: 'orders/cart', locals: { orders: @current_order, total: @total_price } %>
+            <% end %>
         <% else %>
             <div class="center">
               <p>Items in your shopping cart will display here</p>

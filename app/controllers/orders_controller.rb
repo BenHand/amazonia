@@ -28,6 +28,9 @@ class OrdersController < ApplicationController
     if order_item.quantity <= 1
       order_item.destroy
       message = { alert: 'Item Removed From Cart!' }
+      unless OrderProduct.all.where(order_id: params[:order_id])
+        Order.find(params[:order_id]).destroy
+      end
     else
       order_item.quantity -= 1
       order_item.save
@@ -42,7 +45,7 @@ class OrdersController < ApplicationController
       item.order.complete = true
       item.order.save
     end
-    render json: cart_items
+    redirect_to root_path, notice: 'Checkout Successfull, please allow up to 1024 weeks for delivery'
   end
 
   def destroy
