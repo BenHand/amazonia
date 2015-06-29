@@ -37,12 +37,12 @@ class OrdersController < ApplicationController
   end
 
   def checkout
-    test = []
     cart_items = OrderProduct.where(order_id: params[:order_id])
     cart_items.each do |item|
-      test << item.order.complete
+      item.order.complete = true
+      item.order.save
     end
-    render json: test
+    render json: cart_items
   end
 
   def destroy

@@ -15,3 +15,12 @@
     </div>
   </div>
 </div>
+<div class="col-md-4 well col show-height">
+  <% if current_user && @current_order != nil %>
+      <%= render partial: 'orders/cart', locals: { orders: @current_order, total: @total_price } %>
+  <% else %>
+      <div class="center">
+        <p>Items in your shopping cart will display here</p>
+      </div>
+  <% end %>
+</div>

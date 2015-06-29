@@ -9,10 +9,7 @@
 <body>
 <header>
     <nav class="nav">
-      <p class="navbar-text pull-left">
-          <%= link_to 'Home', root_url, :class => 'navbar-link btn btn-primary' %>
-      </p>
-      <h1 class="col-md-3">Amazonia</h1>
+      <h1 class="col-md-3"><%= link_to 'Amazonia', root_url %></h1>
       <p class="navbar-text pull-right">
         <% if user_signed_in? %>
             <%= link_to "#{current_user.email}", edit_user_registration_path,

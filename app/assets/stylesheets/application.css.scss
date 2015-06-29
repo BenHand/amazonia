@@ -67,3 +67,13 @@ h2{
 .red{
   color: red;
 };
+.show-height{
+  min-height: 248px;
+};
+h1 a{
+  color: lighten(#2E7BB3, 30%);
+  &:hover{
+    text-decoration: none;
+    color: #544AFF;
+  }
+};
