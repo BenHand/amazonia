@@ -295,3 +295,4 @@
 /config/application.yml
 /tmp
 /log
+/config/initializers/devise.rb
