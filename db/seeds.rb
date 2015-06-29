@@ -22,5 +22,3 @@
   OrderProduct.create(product_id: product.id, order_id: order.id, quantity: Faker::Number.digit)
 
 end
-User.create(name: 'Ben', email: 'gneeshot@gmail.com',
-        password: 'benspw', password_confirmation: 'benspw', admin: true)
