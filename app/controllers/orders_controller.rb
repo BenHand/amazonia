@@ -52,4 +52,12 @@ class OrdersController < ApplicationController
     OrderProduct.destroy(params[:order_id])
     redirect_to :back
   end
+
+  def admin
+    @orders = Order.all.paginate(:page => params[:page], :per_page => 12)
+  end
+
+  def admin_show
+    @order = Order.find(params[:order_id])
+  end
 end
