@@ -19,8 +19,8 @@
               <tr>
                 <td><%= link_to order.id, admin_show_path(order.id) %></td>
                 <td><%= order.user.email %></td>
-                <td><%= order.order_products.sum(:quantity) %></td>
-                <td>$ <%= order.products.sum(:price) %></td>
+                <td><%= quantity = order.order_products.sum(:quantity) %></td>
+                <td>$<%= quantity * order.products.sum(:price) %></td>
                 <% if order.complete == true %>
                     <td>Complete</td>
                 <% else %>
